@@ -6,9 +6,183 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>_</title>
     <link rel="shortcut icon" href="./images/favicon1.ico" type="image/x-icon">  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <meta name="author" content="sueszli">
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300&display=swap" rel="stylesheet">
 </head>
+
+<style>
+
+    /*--------------------------BASIC STYLING--------------------------*/
+    body {
+        margin: 0;
+        padding: 0;
+        background: black url('../images/black.jpg') no-repeat center center / cover;
+        color: white;
+
+        font-family: 'IBM Plex Mono', monospace;
+    
+        height: 100vh; /*100% of viewport height*/
+        overflow: hidden; /*no scrollbar*/
+    }
+
+    nav {
+        display: flex;
+        font-size: 3rem;
+        flex-direction: column;
+        justify-content: center; /*sets y-Axis when in column flow*/
+        height: 100%;
+        padding: 0 0 0 10%;
+    }
+
+    a {
+        display: block;
+        text-decoration: inherit;
+        color: inherit;
+        margin: 0.4rem;
+    }
+
+    .txt-type > .txt { /*cursor for TypeWriter*/
+        border-right: 0.1rem solid #777;
+    }
+
+    .light {
+        opacity: 40%;
+    }
+    
+    /*--------------------------CHANGE ON HOVER--------------------------*/
+    a:hover{
+        background-color: white;
+        color: black;
+
+        font-size: 0;
+
+        position: relative;
+        animation-name: one;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards; /*stays the same after animation*/
+    }
+
+    @keyframes one {
+        0% {left: 0rem;}
+        100% { left: 1rem; }
+    }
+    
+    a:hover::after{
+        font-size: 3rem;
+        content: attr(data-hover);
+    }
+    
+    /*--------------------------RESPONSIVENESS--------------------------*/
+    @media(max-width: 800px) {
+        a {
+            font-size: 2rem;
+        }
+        a:hover::after{
+            font-size: 2rem;
+        }
+        nav {
+            padding: 0 0 0 1%;
+        }
+    }
+    
+    @media(max-width: 450px) {
+        a {
+            font-size: 1rem;
+        }
+        a:hover::after{
+            font-size: 1rem;
+        }
+        nav {
+            padding: 0 0 0 1%;
+        }
+    }
+
+    @media (hover: none) { /*no mouse to hover with*/
+        a {
+            font-size: 0;
+        }
+        a::after {
+            font-size: 2rem;
+            content: attr(data-hover);
+        }
+    }
+
+</style>
+
 <body>
-    <h1>Work in Progress!</h1>
+    <nav>
+        <a href="about.html" data-hover="> Who I am">
+            <span class="light">This is</span> Yahya.
+        </a>
+
+        <a href="work.html" data-hover="> What I do">
+            <span class="light">Yahya </span><span class="txt-type" data-words='["codes.", "makes things.", "breaks things."]'></span>
+        </a>
+    </nav>
 </body>
+
+<script>
+    /**
+     *  TYPEWRITER SETTINGS
+     */
+    const pauseAfterWriting = 1000;
+    const PauseAfterDeleting = 500;
+    const initialTypeSpeed = 180; //lower number => faster
+    const deletingAccelerator = 1.02;  
+
+
+    class TypeWriter {
+        constructor(spanElement, words) { //default set to 3000ms
+            this.spanElement = spanElement;
+            this.words = words; 
+            this.txt = ''; //written words until now
+            this.wordIndex = 0; //words are stored in an array
+            this.type();
+            this.isDeleting = false;
+        }
+
+        type() {
+            //index of word in word arry
+            const current = this.wordIndex % this.words.length;
+            const fulltxt = this.words[current];
+
+            if(this.isDeleting) {
+                this.txt = fulltxt.substring(0, this.txt.length - 1); //remove char
+            } else {
+                this.txt = fulltxt.substring(0, this.txt.length + 1); //add char
+            }
+
+            //inserting another span into spanElement
+            this.spanElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+            let typeSpeed = initialTypeSpeed;
+            if(this.isDeleting) { typeSpeed = typeSpeed / deletingAccelerator; }
+
+            if(!this.isDeleting && this.txt === fulltxt) { //finished typing
+                this.isDeleting = true;
+                typeSpeed = pauseAfterWriting;
+            } else if(this.isDeleting && this.txt === '') { //finished deleting
+                this.isDeleting = false;
+                this.wordIndex++;
+                typeSpeed = PauseAfterDeleting;//pause
+            }
+
+            setTimeout(() => this.type(), typeSpeed); //calls itself each 500ms
+        }
+    }
+    
+    // Init on DOM load
+    document.addEventListener('DOMContentLoaded', init);
+    
+    function init() {
+        const spanElement = document.querySelector('.txt-type');
+        const words = JSON.parse(spanElement.getAttribute('data-words'));
+        new TypeWriter(spanElement, words);
+    }
+</script>
 </html>
