@@ -24,33 +24,40 @@
         color: white;
 
         font-family: 'IBM Plex Mono', monospace;
-    
+        font-weight: 600;
+
         height: 100vh; /*100% of viewport height*/
         overflow: hidden; /*no scrollbar*/
     }
 
     nav {
         display: flex;
-        font-size: 3rem;
         flex-direction: column;
         justify-content: center; /*sets y-Axis when in column flow*/
         height: 100%;
         padding: 0 0 0 10%;
+
+        font-size: 3vw;
     }
 
     a {
+        position: relative;
         display: block;
         text-decoration: inherit;
         color: inherit;
         margin: 0.4rem;
     }
 
-    .txt-type > .txt { /*cursor for TypeWriter*/
+    .txt-type1 > .txt { /*cursor for TypeWriter*/
         border-right: 0.1rem solid #777;
     }
 
+    .txt-type0 > .txt { /*cursor for TypeWriter*/
+        border-right: 0.1rem solid #ddd;
+    }
+
     .light {
-        opacity: 40%;
+        color: #777;
     }
     
     /*--------------------------CHANGE ON HOVER--------------------------*/
@@ -60,7 +67,6 @@
 
         font-size: 0;
 
-        position: relative;
         animation-name: one;
         animation-duration: 0.5s;
         animation-iteration-count: 1;
@@ -73,41 +79,47 @@
     }
     
     a:hover::after{
-        font-size: 3rem;
+        font-size: 3vw;
         content: attr(data-hover);
     }
     
     /*--------------------------RESPONSIVENESS--------------------------*/
-    @media(max-width: 800px) {
+    @media(max-width: 852px) { /*no desktop screen*/
         a {
-            font-size: 2rem;
+            font-size: 7vw;
         }
         a:hover::after{
-            font-size: 2rem;
-        }
-        nav {
-            padding: 0 0 0 1%;
-        }
-    }
-    
-    @media(max-width: 450px) {
-        a {
-            font-size: 1rem;
-        }
-        a:hover::after{
-            font-size: 1rem;
+            font-size: 7vw;
         }
         nav {
             padding: 0 0 0 1%;
         }
     }
 
-    @media (hover: none) { /*no mouse to hover with*/
+    header {
+        display: none;
+    }
+
+    @media (hover: none) { /*touchpad*/
+        header {
+            font-family: monospace;
+            display: inline;
+            position: relative;
+            font-size: 2vw;
+            left: 4%;
+            top: 3%;
+        }
+        .light {
+            color: #bbb;
+        }
         a {
+            position: relative;
+            top: 10%;
             font-size: 0;
+            margin: 2%;
         }
         a::after {
-            font-size: 2rem;
+            font-size: 7vw;
             content: attr(data-hover);
         }
     }
@@ -115,13 +127,17 @@
 </style>
 
 <body>
+    <header> <!-- Only shown if no mouse-->
+        <h1><span class="light">yahya.</span><span class="txt-type0" data-words='["codes", "makes stuff", "breaks stuff"]'></span></h1>
+    </header>
+
     <nav>
         <a href="about.html" data-hover="> Who I am">
             <span class="light">This is</span> Yahya.
         </a>
 
         <a href="work.html" data-hover="> What I do">
-            <span class="light">Yahya </span><span class="txt-type" data-words='["codes.", "makes things.", "breaks things."]'></span>
+            <span class="light">Yahya </span><span class="txt-type1" data-words='["codes.", "makes stuff.", "breaks stuff."]'></span>
         </a>
     </nav>
 </body>
@@ -130,10 +146,10 @@
     /**
      *  TYPEWRITER SETTINGS
      */
-    const pauseAfterWriting = 1000;
+    const pauseAfterWriting = 1500;
     const PauseAfterDeleting = 500;
-    const initialTypeSpeed = 180; //lower number => faster
-    const deletingAccelerator = 1.02;  
+    const initialTypeSpeed = 250; //lower number => faster
+    const deletingAccelerator = 2;  
 
 
     class TypeWriter {
@@ -180,9 +196,15 @@
     document.addEventListener('DOMContentLoaded', init);
     
     function init() {
-        const spanElement = document.querySelector('.txt-type');
-        const words = JSON.parse(spanElement.getAttribute('data-words'));
-        new TypeWriter(spanElement, words);
+        //touchpad typewriter
+        const spanElement0 = document.querySelector('.txt-type0');
+        const words0 = JSON.parse(spanElement0.getAttribute('data-words'));
+        new TypeWriter(spanElement0, words0);
+
+        //desktop typewriter
+        const spanElement1 = document.querySelector('.txt-type1');
+        const words1 = JSON.parse(spanElement1.getAttribute('data-words'));
+        new TypeWriter(spanElement1, words1);
     }
 </script>
 </html>
