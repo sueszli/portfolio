@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>_</title>
-    <link rel="shortcut icon" href="./images/favicon1.ico" type="image/x-icon">  
+    <title>home</title>
+    <link rel='shortcut icon' type='image/x-icon' href='./images/favicon1.ico' />
     <meta name="author" content="sueszli">
 
     <!-- google fonts -->
@@ -18,9 +18,15 @@
 
     /*--------------------------BASIC STYLING--------------------------*/
     body {
+        background-color: black;
+        background-image: url(images/side.jpg);
+        background-size: contain;
+        background-attachment:fixed;
+        background-position: right;
+        background-repeat: no-repeat;
+
         margin: 0;
         padding: 0;
-        background: black url('../images/black.jpg') no-repeat center center / cover;
         color: white;
 
         font-family: 'IBM Plex Mono', monospace;
@@ -122,13 +128,43 @@
         }
         a {
             position: relative;
-            top: 10%;
+            top: 25%;
             font-size: 0;
             margin: 2%;
         }
         a::after {
             font-size: 7vw;
             content: attr(data-hover);
+        }
+    }
+
+
+    /*--------------------------RESPONSIVENESS: Background only --------------------------*/
+
+    @media(max-width: 1300px) {
+        body {
+            background-position: right -19vw bottom 50%;
+        }
+    }
+
+    @media(max-width: 980px) {
+        body {
+            background-position: right -30vw bottom 50%;
+        }
+    }
+
+    @media(max-width: 852px) { 
+        body {
+            background-position: right -59vw bottom 50%;
+        }
+    }
+
+    @media(max-width: 752px) {
+        .light {
+            color: #eee;
+        }
+        body {
+            background-position: center
         }
     }
 
@@ -154,7 +190,7 @@
     /**
      *  TYPEWRITER SETTINGS
      */
-    const pauseAfterWriting = 1500;
+    const pauseAfterWriting = 2500;
     const PauseAfterDeleting = 500;
     const initialTypeSpeed = 250; //lower number => faster
     const deletingAccelerator = 2;  
