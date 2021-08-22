@@ -39,7 +39,7 @@ html, body {
 
 .wrapper .container {
 	/*center and set width*/
-	width: 97%;
+	width: 95%;
 	margin: 0px auto;
 }
 
@@ -238,6 +238,6 @@ html, body {
 
 @media (max-width: 900px) {
 	.socials .socials-container a {
-		font-size: 30px;
+		font-size: 25px;
 	}
 }
