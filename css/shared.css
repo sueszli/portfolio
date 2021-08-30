@@ -14,13 +14,11 @@
     font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap');
+
 .mono {
 	font-family: monospace;
 	font-size: 16px;
-}
-
-.jetbrains {
-	font-family: 'JetBrains Mono', monospace;
 }
 
 /*--------------------------HIDE SCROLLBAR, KEEP FUNCTIONALITY--------------------------*/
@@ -86,9 +84,10 @@ a {
 
 /*--------------------------FOOTER--------------------------*/
 footer {
+	font-size: 20px;
 	font-family: monospace;
 	opacity: 30%;
-	margin-top: 3rem;
+	margin-top: 4rem;
 	margin-bottom: 1rem;
 	text-align: center;
 }

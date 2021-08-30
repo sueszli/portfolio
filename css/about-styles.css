@@ -55,62 +55,40 @@
 	justify-content: space-between;
 }
 
-/*--------------------------RIGHT CONTENT--------------------------*/
-.right-content {
+/*--------------------------CONTENT--------------------------*/
+.content {
+	font-family: 'JetBrains Mono', monospace;
 	width: 100%;
 }
 
-.right-content::after {
+.content::after {
 	content: "";
 	display: table;
 	clear: both;
 }
 
-.right-content .right-content-container {
+.content .content-container {
 	width: 70%;
+}
+
+.content .content-container p {
+	margin: 40px 0;
+	font-size: 36px;
+}
+
+.right {
 	float: right;
 }
 
-.right-content .right-content-container p {
-	margin: 40px 0;
-	font-size: 36px;
-}
-
-@media (max-width: 900px) {
-	.right-content .right-content-container {
-		width: 100%;
-	}
-	.right-content .right-content-container p {
-		font-size: 24px;
-	}
-}
-
-/*--------------------------LEFT CONTENT--------------------------*/
-.left-content {
-	width: 100%;
-}
-
-.left-content::after {
-	content: "";
-	display: table;
-	clear: both;
-}
-
-.left-content .left-content-container {
-	width: 70%;
+.left {
 	float: left;
 }
 
-.left-content .left-content-container p {
-	margin: 40px 0;
-	font-size: 36px;
-}
-
 @media (max-width: 900px) {
-	.left-content .left-content-container {
+	.content .content-container {
 		width: 100%;
 	}
-	.left-content .left-content-container p {
+	.content .content-container p {
 		font-size: 24px;
 	}
 }
@@ -135,11 +113,6 @@
 }
 
 /*--------------------------CONTACT--------------------------*/
-.contact {
-	position: relative;
-	top: -1em;
-}
-
 .contact .contact-container {
 	display: flex;
 	justify-content: space-between;
