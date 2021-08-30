@@ -1,3 +1,28 @@
+/*-------------------------- FONTS --------------------------*/
+@font-face {
+	font-family: 'bigillaregular';
+    src: url('/fonts/bigilla_400-webfont.woff2') format('woff2'), url('/fonts/bigilla_400-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	
+}
+
+@font-face {
+	font-family: 'bigillabold';
+    src: url('/fonts/bigilla_bold_700-webfont.woff2') format('woff2'), url('/fonts/bigilla_bold_700-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.mono {
+	font-family: monospace;
+	font-size: 16px;
+}
+
+.jetbrains {
+	font-family: 'JetBrains Mono', monospace;
+}
+
 /*--------------------------HIDE SCROLLBAR, KEEP FUNCTIONALITY--------------------------*/
 body::-webkit-scrollbar {
 	display: none; /* Chrome, Safari and Opera */
@@ -16,14 +41,9 @@ body {
 	color: #fff;
 }
 
-a {
-	text-decoration: inherit;
-    color: #eee;
-}
-
 html, body {
-	overflow-x: hidden;
 	background: black;
+	overflow-x: hidden;
 }
 
 .wrapper {
@@ -32,7 +52,6 @@ html, body {
 }
 
 .wrapper .container {
-	/*center and set width*/
 	width: 95%;
 	margin: 0px auto;
 }
@@ -48,13 +67,8 @@ html, body {
 	height: 5em;
 }
 
-.mono {
-	font-family: monospace;
-	font-size: 16px;
-}
-
-.jetbrains {
-	font-family: 'JetBrains Mono', monospace;
+a {
+	text-decoration: inherit;
 }
 
 @media (min-width: 2200px) { /*for huge screens*/
@@ -68,4 +82,13 @@ html, body {
 	display: flex;
 	padding: 0.5em 0;
 	justify-content: space-between;
+}
+
+/*--------------------------FOOTER--------------------------*/
+footer {
+	font-family: monospace;
+	opacity: 30%;
+	margin-top: 4rem;
+	margin-bottom: 2rem;
+	text-align: center;
 }

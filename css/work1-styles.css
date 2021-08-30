@@ -493,26 +493,6 @@ img {
     color: var(--first-color);
 }
 
-
-
-/*==================== FOOTER ====================*/
-.footer {
-    padding-top: 2rem;
-    color: #FFF;
-}
-
-.footer__bg {
-    background-color: var(--first-color-second);
-    padding: 2rem 0 3rem;
-}
-
-.footer__copy {
-    font-size: var(--small-font-size);
-    text-align: center;
-    color: var(--text-color-light);
-    margin-top: var(--mb-3);
-}
-
 /*==================== MEDIA QUERIES ====================*/
 /* For small devices */
 @media screen and (max-width: 350px) {

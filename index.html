@@ -32,6 +32,171 @@
     </nav>
 </body>
 
+<style>
+    /*--------------------------BASIC STYLING--------------------------*/
+    body {
+        background-color: black;
+        background-image: url(../images/side.jpg);
+        background-size: contain;
+        background-attachment:fixed;
+        background-repeat: no-repeat;
+        background-position: right;
+
+        margin: 0;
+        padding: 0;
+        color: white;
+
+        font-family: 'IBM Plex Mono', monospace;
+        font-weight: 600;
+
+        height: 100vh; /*100% of viewport height*/
+        width: auto;
+        overflow: hidden; /*no scrollbar*/
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /*sets y-Axis when in column flow*/
+        height: 100%;
+        padding: 0 0 0 10%;
+
+        font-size: 3vw;
+    }
+
+    a {
+        position: relative;
+        display: block;
+        text-decoration: inherit;
+        color: inherit;
+        margin: 0.4rem;
+    }
+
+    .txt-type1 > .txt { /*cursor for TypeWriter*/
+        border-right: 0.1rem solid #777;
+    }
+
+    .txt-type0 > .txt { /*cursor for TypeWriter*/
+        border-right: 0.1rem solid #ddd;
+    }
+
+    .light {
+        color: #777;
+    }
+    
+    /*--------------------------CHANGE ON HOVER--------------------------*/
+    a:hover{
+        background-color: white;
+        color: black;
+
+        font-size: 0;
+
+        animation-name: one;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards; /*stays the same after animation*/
+    }
+
+    @keyframes one {
+        0% {left: 0rem;}
+        100% { left: 1rem; }
+    }
+    
+    a:hover::after{
+        font-size: 3vw;
+        content: attr(data-hover);
+    }
+    
+    /*--------------------------RESPONSIVENESS --------------------------*/
+    @media(max-width: 852px) { /*no desktop screen*/
+        a {
+            font-size: 7vw;
+            padding-bottom: 1.3%;
+        }
+        a:hover::after{
+            font-size: 7vw;
+        }
+        nav {
+            padding: 0 0 0 1%;
+        }
+    }
+
+    header {
+        display: none;
+    }
+
+    @media (hover: none) { /*touchpad*/
+        /*disable scrolling*/
+        html, body {
+            overflow: hidden;
+        }
+        body {
+            position: relative;
+        }
+        /*add hidden header element*/
+        header {
+            font-family: monospace;
+            display: inline;
+            position: relative;
+            font-size: 2vw;
+            left: 4%;
+            top: 3%;
+        }
+        .light {
+            color: #bbb;
+        }
+        a {
+            position: relative;
+            top: 13%;
+            font-size: 0;
+            margin: 2%;
+        }
+        a::after {
+            font-size: 7vw;
+            content: attr(data-hover);
+        }
+    }
+
+
+    /*--------------------------RESPONSIVENESS: Background only --------------------------*/
+    /*
+    Important: enter responsive mode in dev view to check media queries, don't just resize the window or else it won't work
+        min-width x == width >= x
+        max-width x == width <= x
+    */
+    
+    @media (max-width: 1300px)  {
+        /*a::before { content: "w <= 1300 "; }*/
+        body {
+            background-position: right -25vw bottom 50%;
+        }
+    }
+    
+    @media (max-width: 980px) {
+        /*a::before { content: "w <= 980 "; }*/
+        body {
+            background-position: right -30vw bottom 50%;
+        }
+    }
+    
+    @media (max-width: 852px) { 
+        /*a::before { content: "w <= 852 "; } */
+        body {
+            background-position: right -59vw bottom 50%;
+        }
+    }
+    
+    @media (max-width: 752px) { 
+        /* a::before { content: "w <= 752 "; } */
+        .light {
+            color: #aaa;
+        }
+        body {
+            background-position: right 50% bottom 78%;
+        }
+    }
+</style>
+
 <script>
     /**
      *  TYPEWRITER SETTINGS
