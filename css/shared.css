@@ -32,6 +32,7 @@ body {
 }
 
 /*--------------------------BASIC STYLING--------------------------*/
+
 * {
 	margin: 0;
 	padding: 0;
@@ -42,6 +43,7 @@ body {
 html, body {
 	background: black;
 	overflow-x: hidden;
+	font-family: monospace;
 }
 
 .wrapper {
@@ -67,20 +69,70 @@ html, body {
 }
 
 a {
-	text-decoration: inherit;
+	text-decoration: none;
 }
 
+
+
 /*--------------------------NAVBAR--------------------------*/
+nav {
+	font-size: 16px;
+}
+
 .navbar .navbar-container {
 	display: flex;
 	padding: 0.5em 0;
 	justify-content: space-between;
 }
 
+/*--------------------------SECTION HEADER--------------------------*/
+.section-header .section-header-container {
+	display: flex;
+	padding: 12px 0;
+	justify-content: space-between;
+}
+
+/*--------------------------CONTENT--------------------------*/
+.content {
+	font-size: 36px;
+	font-family: 'JetBrains Mono', monospace;
+	width: 100%;
+}
+
+.content::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.content .content-container {
+	width: 70%;
+}
+
+.content .content-container p {
+	margin: 40px 0;
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+@media (max-width: 900px) {
+	.content .content-container {
+		width: 100%;
+	}
+	.content .content-container p {
+		font-size: 24px;
+	}
+}
+
 /*--------------------------FOOTER--------------------------*/
 footer {
 	font-size: 20px;
-	font-family: monospace;
 	font-weight: 100;
 	opacity: 30%;
 	margin-top: 4rem;

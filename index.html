@@ -55,17 +55,19 @@
     }
 
     nav {
+        background: inherit; /*used for a:hover*/
+
         display: flex;
         flex-direction: column;
         justify-content: center; /*sets y-Axis when in column flow*/
         height: 100%;
         padding: 0 0 0 10%;
-
         font-size: 3vw;
     }
 
     a {
         position: relative;
+        top: -9%;
         display: block;
         text-decoration: inherit;
         color: inherit;
@@ -87,22 +89,24 @@
     /*--------------------------CHANGE ON HOVER--------------------------*/
     a:hover{
         background-color: white;
-        color: black;
-
-        font-size: 0;
-
+        mix-blend-mode: difference; /*inverts background -> only possible because nav inherits background*/
+        
+        font-size: 0; /*remove content*/
+        
+        width: 120%;
         animation-name: one;
         animation-duration: 0.5s;
         animation-iteration-count: 1;
         animation-fill-mode: forwards; /*stays the same after animation*/
     }
-
+    
     @keyframes one {
         0% {left: 0rem;}
         100% { left: 1rem; }
     }
     
     a:hover::after{
+        color: black;
         font-size: 3vw;
         content: attr(data-hover);
     }

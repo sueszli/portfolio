@@ -41,55 +41,10 @@
 
 @media (max-width: 900px) {
 	.hero-image {
-		margin-top: -325px;
+		margin-top: -290px;
 	}
 	.hero-image .hero-image-container {
 		width: 100%;
-	}
-}
-
-/*--------------------------SECTION HEADER--------------------------*/
-.section-header .section-header-container {
-	display: flex;
-	padding: 12px 0;
-	justify-content: space-between;
-}
-
-/*--------------------------CONTENT--------------------------*/
-.content {
-	font-family: 'JetBrains Mono', monospace;
-	width: 100%;
-}
-
-.content::after {
-	content: "";
-	display: table;
-	clear: both;
-}
-
-.content .content-container {
-	width: 70%;
-}
-
-.content .content-container p {
-	margin: 40px 0;
-	font-size: 36px;
-}
-
-.right {
-	float: right;
-}
-
-.left {
-	float: left;
-}
-
-@media (max-width: 900px) {
-	.content .content-container {
-		width: 100%;
-	}
-	.content .content-container p {
-		font-size: 24px;
 	}
 }
 
