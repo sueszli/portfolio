@@ -72,8 +72,6 @@ a {
 	text-decoration: none;
 }
 
-
-
 /*--------------------------NAVBAR--------------------------*/
 nav {
 	font-size: 16px;
@@ -85,12 +83,15 @@ nav {
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards; /*stays the same after animation*/
 }
+
 .nav-elem:hover {
 	font-weight: 600;
 }
+
 .back-nav:hover {
 	animation-name: left;
 }
+
 .forward-nav:hover {
 	animation-name: right;
 }
