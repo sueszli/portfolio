@@ -45,7 +45,8 @@ html, body {
 }
 
 .wrapper {
-	width: 100%;
+	max-width: 1750px;
+	margin: 0 auto;
 	height: 100%;
 }
 
@@ -69,12 +70,6 @@ a {
 	text-decoration: inherit;
 }
 
-@media (min-width: 2200px) { /*for huge screens*/
-	.wrapper .container {
-		width: 2000px;
-	}
-}
-
 /*--------------------------NAVBAR--------------------------*/
 .navbar .navbar-container {
 	display: flex;
@@ -86,6 +81,7 @@ a {
 footer {
 	font-size: 20px;
 	font-family: monospace;
+	font-weight: 100;
 	opacity: 30%;
 	margin-top: 4rem;
 	margin-bottom: 1rem;

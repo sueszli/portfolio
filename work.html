@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     
     <link rel="stylesheet" href="/css/shared.css">
-    <link rel="stylesheet" href="/css/about-styles.css">
-    <link rel="stylesheet" href="/css/work-styles.css">
 </head>
 
 <style>
@@ -23,7 +21,7 @@
 <body>
     <div class="wrapper">
         <div class="container">
-
+            
             <!-- navbar -->
             <nav class="navbar mono">
                 <div class="navbar-container">
@@ -31,69 +29,14 @@
                     <div class="forward-nav"><a href="about.html">who i am ></a></div>
                 </div>
             </nav>
-
+            
             <div class="divider"></div>
-
-
-            <div class="whitespace"></div>
-            <h1 style="font-family: 'JetBrains Mono', monospace;">Work in progress</h1>
             
-            
-            
-            
-            
-            
-            <!-- footer -->
-            <footer>
-                <p>Pictures by <a target="_blank" href="https://www.jakobsohm.at/">@jakobsohm</a> <br>
-                    Copyright <a target="_blank" href="https://github.com/sueszli/portfolio">@sueszli</a>, 2021 <br></p>
-            </footer>
             <div class="whitespace"></div>                
-
+            <h1 class="mono" style="font-size: 80px;">Work in progress</h1>
+            <div class="whitespace"></div>                
+            
         </div>
     </div>
 </body>
-
-<script>
-    /*==================== ACCORDION SKILLS ====================*/
-    const skillsContent = document.getElementsByClassName('skills__content');
-    const skillsHeader = document.querySelectorAll('.skills__header');
-
-    function toggleSkills() {
-        let itemClass = this.parentNode.className;
-        for (let i = 0; i < skillsContent.length; i++) {
-            skillsContent[i].className = 'skills__content skills__close';
-        }
-
-        if(itemClass === 'skills__content skills__close'){
-            this.parentNode.className = 'skills__content skills__open';
-        }
-    }
-
-    skillsHeader.forEach(el => {
-        el.addEventListener('click', toggleSkills);
-    })
-
-    /*==================== QUALIFICATION TABS ====================*/
-    const tabs = document.querySelectorAll('[data-target]');
-    const tabsContents = document.querySelectorAll('[data-content]');
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const target = document.querySelector(tab.dataset.target);
-
-            tabsContents.forEach(tc => {
-                tc.classList.remove('qualification__active')
-            })
-
-            target.classList.add('qualification__active');
-
-            tab.forEach(t => {
-                t.classList.remove('qualification__active');
-            })
-            tab.classList.add('qualification__active');
-        })
-    })
-</script>
-
 </html>
