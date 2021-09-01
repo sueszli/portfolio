@@ -206,10 +206,10 @@ img {
     .download-button-container {
         display: flex;
         justify-content: center;
+        transform: translateX(-2.43rem);
     }
 
     .download-button {
-        transform: translateX(-1.8rem);
         transform: translateY(2rem);
     }
 }
