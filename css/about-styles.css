@@ -79,6 +79,12 @@
 	font-size: 64px;
 }
 
+@media (max-width: 400px) {
+	.contact .contact-container {
+		flex-direction: column;
+	}
+}
+
 @media (max-width: 900px) {
 	.contact .contact-container a {
 		font-size: 43px;

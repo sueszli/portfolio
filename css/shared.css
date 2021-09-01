@@ -149,10 +149,8 @@ nav {
 }
 
 @media (max-width: 900px) {
-	.content .content-container {
+	.content, .content .content-container {
 		width: 100%;
-	}
-	.content .content-container p {
 		font-size: 24px;
 	}
 }

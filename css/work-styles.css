@@ -13,6 +13,7 @@
     display: inline-block;
     font-size: 36px;
     padding: 1rem;
+    padding-left: 2rem;
     border-radius: 0.5rem;
 }
 
@@ -25,9 +26,9 @@
     align-items: center;
 }
 
-
-
-
+.socials-button:hover {
+    color: var(--hover-color);
+}
 
 
 
@@ -42,28 +43,24 @@
 
 
 /*==================== HOME ====================*/
-
 .home {
     display: grid;
-    grid-template-columns: 0.5fr 3fr;
-    padding-top: 3.5rem;
     align-items: center;
-}
-
-img {
-    display: block;
-    width: 200%;
-    height: auto;
+    grid-template-columns: max-content 1fr 1fr;
+    margin-top: 2rem;
 }
 
 .socials {
-    display: grid;
-    grid-template-columns: max-content;
-    row-gap: 1rem;
+    grid-column: 1/2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateX(-4rem);
 }
 
 .socials-icon {
-    font-size: 36px;
+    margin: 0.3rem;
+    font-size: var(--normal-font-size);
     color: var(--first-color);
 }
 
@@ -71,72 +68,163 @@ img {
     color: var(--hover-color);
 }
 
+img {
+    grid-column: 2/3;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.home-data {
+    grid-column: 3/4;
+}
+
 .home__title {
     color: var(--first-color);
-    font-size: 36px;
+    font-size: var(--normal-font-size);
     margin-bottom: 2rem;
 }
 
 .home__description {
-    padding-bottom: 3rem;
+    margin-bottom: 3rem;
 }
 
 .download-icon {
-    font-size: 36px;
-    margin-left: 1rem;
-    transition: 1.5s;
+    font-size: var(--normal-font-size);
+    margin-left: 2.2rem;
 }
 
-/* For small devices */
-@media screen and (max-width: 350px) {
+.whitespace-home {
+    margin-top: 8rem;
+}
+
+/*this part should could get refactored for less code but this way its easier to maintain*/
+@media (max-width: 460px) { /*[0;460]*/
+    .socials, .home-data {
+        margin-top: 3rem;
+    }
+
     .home {
-        grid-template-columns: 0.25fr max-content;
+        margin-top: 0;
+        grid-template-columns: max-content 1fr;
+        grid-template-rows: 1fr 0.3fr;
+    }    
+
+    .socials {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        transform: translateX(0);
+        transform: translateY(-1.8rem);
     }
 
     img {
-        width: 180px;
-    }
-}
-
-/* For medium devices */
-@media screen and (min-width: 500px) {
-    .home {
-        grid-template-columns: max-content 1fr 1fr;
+        grid-column: 1/3;
+        grid-row: 1/2;
+        width: 80%;
+        height: auto;
+        justify-self: center;
+        align-self: center;
+        margin-bottom: 0.5rem;
+        margin-top: 4rem;
     }
 
     .home-data {
+        grid-column: 2/3;
+        grid-row: 2/3;
         margin-left: 1rem;
     }
 
-    img {
-        order: 1;
-        justify-self: center;
+    .home__title {
+        margin-bottom: 0.5rem;
+    }
+
+    .home__description {
+        margin-bottom: 1rem;
+    }
+
+    .socials-icon, .home__title, .download-icon, .home__description, .button {
+        font-size: 20px;
+    }
+
+    .download-button {
+        margin-right: 1rem;
+    }
+    
+}
+
+@media (min-width: 460px) and (max-width: 650px) {  /*[460;650]*/
+    .socials, .home-data {
+        margin-top: 2rem;
     }
 }
 
-@media screen and (min-width: 768px) {
+@media (min-width: 460px) and (max-width: 937px) {  /*[460;937]*/
+    .home, .socials {
+        margin-top: 0rem;
+    }
+
     .home {
-        padding-top: 5.5rem;
-        row-gap: 5rem;
-        column-gap: 2rem;
+        grid-template-columns: max-content 1fr;
+        grid-template-rows: 1fr 0.3fr;
+    }    
+
+    .socials {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        transform: translateX(0);
+        transform: translateY(-1rem);
     }
 
     img {
-        width: 270px;
+        grid-column: 1/3;
+        grid-row: 1/2;
+        width: 60%;
+        height: auto;
+        justify-self: center;
+        align-self: center;
+        margin-bottom: 0.5rem;
+        margin-top: 4rem;
+    }
+
+    .home-data {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        margin-left: 2rem;
+    }
+
+    .home__title {
+        margin-bottom: 0.5rem;
+    }
+
+    .home__description {
+        margin-bottom: 1rem;
+    }
+
+    .download-button-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .download-button {
+        transform: translateX(-1.8rem);
     }
 }
 
-/* For large devices */
-@media screen and (min-width: 1600px) {
-    img {
-        width: 320px;
+@media (min-width: 937px) { /*[937; infinity]*/
+    .home {
+        column-gap: 5rem;
     }
 
     .socials {
-        transform: translateX(-6rem);
+        transform: translateX(3rem);
     }
 }
 
+@media (min-width: 460px) and (max-width: 1320px) { /*[460; 1320]*/
+    .socials-icon, .home__title, .download-icon, .home__description, .button {
+        font-size: 24px;
+    }
+}
 
 
 
@@ -203,7 +291,6 @@ section {
     section {
         margin-right: auto;
         margin-left: auto;
-        padding: 6rem 0 2rem;
     }
 
     .section__subtitle {
@@ -235,6 +322,8 @@ section {
 .skills__container {
     max-width: 700px;
     row-gap: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .skills__header {
@@ -291,6 +380,15 @@ section {
     background-color: var(--first-color);
 }
 
+.skills__content {
+    padding: 1rem 0.5rem;
+    margin-bottom: 1rem;
+    border: solid;
+    border-color: var(--first-color);
+    border-width: 1px;
+    border-radius: 0.5rem;
+}
+
 /*https://stackoverflow.com/questions/68964085/is-it-possible-to-use-data-attributes-in-html-to-set-the-width-in-css*/
 .skills__html { width: 90%; }
 .skills__css { width: 80%; }
@@ -344,6 +442,11 @@ section {
 
 
 /*==================== QUALIFICATION ====================*/
+.qualification-nav {
+    display: flex;
+    justify-content: space-around;
+}
+
 .qualification__tabs {
     display: flex;
     justify-content: space-evenly;
@@ -409,4 +512,8 @@ section {
 
 .qualification__button.qualification__active {
     color: var(--first-color);
+}
+
+.qualification__container {
+    margin-bottom: 20rem;
 }
