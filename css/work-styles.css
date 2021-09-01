@@ -102,6 +102,7 @@ img {
 @media (max-width: 460px) { /*[0;460]*/
     .socials, .home-data {
         margin-top: 3rem;
+        margin-bottom: 2rem;
     }
 
     .home {
@@ -148,6 +149,7 @@ img {
 
     .download-button {
         margin-right: 1rem;
+        transform: translateY(2rem);
     }
     
 }
@@ -155,6 +157,7 @@ img {
 @media (min-width: 460px) and (max-width: 650px) {  /*[460;650]*/
     .socials, .home-data {
         margin-top: 2rem;
+        margin-bottom: 2rem;
     }
 }
 
@@ -207,6 +210,7 @@ img {
 
     .download-button {
         transform: translateX(-1.8rem);
+        transform: translateY(2rem);
     }
 }
 
