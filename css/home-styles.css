@@ -1,0 +1,189 @@
+/*--------------------------HOME--------------------------*/
+@font-face {
+    font-family: 'stretchPro';
+    src: url('/fonts/StretchPro.otf') format('opentype');
+}
+
+/*--------------------------BASIC STYLING--------------------------*/
+body {
+    background-color: black;
+    background-image: url(../images/side-50.jpg); /*50% of original quality*/
+    background-size: contain;
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-position: right;
+
+    margin: 0;
+    padding: 0;
+    color: white;
+
+    font-family: monospace;
+    font-weight: 200;
+
+    height: 100vh; /*100% of viewport height*/
+    width: auto;
+    overflow: hidden; /*no scrollbar*/
+}
+
+nav {
+    background: inherit; /*used for a:hover*/
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /*sets y-Axis when in column flow*/
+
+    height: 100%;
+    padding-left: 10%;
+    font-size: 3vw;
+}
+
+a {
+    position: relative;
+    top: -10%;
+    display: block;
+    text-decoration: inherit;
+    color: inherit;
+    margin: 0.4rem;
+}
+
+.txt-type1 > .txt { /*cursor for TypeWriter*/
+    border-right: 0.1rem solid #777;
+}
+
+.txt-type0 > .txt { /*cursor for TypeWriter*/
+    border-right: 0.1rem solid #ddd;
+}
+
+.light {
+    color: #777;
+}
+
+/*--------------------------CHANGE ON HOVER--------------------------*/
+
+@media not all and (hover: none) { /*only if there is a cursor*/
+    a:hover{
+        background-color: #eee; /*shouldn't be white or else contrast is way too high*/
+        mix-blend-mode: difference; /*inverts background -> only possible because nav inherits background*/
+
+        font-size: 0; /*remove content*/
+
+        width: 120%;
+        animation-name: one;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards; /*stays the same after animation*/
+    }
+    
+    @keyframes one {
+        0% {left: 0rem;}
+        100% { left: 1rem; }
+    }
+    
+    a:hover::after{
+        color: black;
+        font-size: 3vw;
+        content: attr(data-hover);
+    }
+}
+
+
+/*--------------------------RESPONSIVENESS --------------------------*/
+@media (hover: hover) and (max-width: 852px) { /*only if there is a cursor*/
+    a {
+        font-size: 7vw;
+        padding-bottom: 1.3%;
+    }
+    a:hover::after{
+        font-size: 7vw;
+    }
+    nav {
+        padding-left: 1%;
+    }
+}
+
+header {
+    display: none;
+}
+
+@media (hover: none) { /*no cursor to hover with*/
+    /*disable scrolling*/
+    html, body {
+        overflow: hidden;
+    }
+    body {
+        position: relative;
+    }
+
+    /*add hidden header element*/
+    header {
+        font-family: monospace;
+        display: inline;
+        position: relative;
+        font-size: 2vw;
+        left: 4%;
+        top: 3%;
+    }
+
+    .light {
+        color: #bbb;
+    }
+    nav {
+        margin: auto;
+        width: 70%;
+        text-align: center;
+        padding-left: 0;
+
+        position: relative;
+        top: 23%;
+    }
+    a {
+        border: solid 1px ;
+        font-size: 0;
+        margin: 3%;
+        padding: 2%;
+    }
+    a::after {
+        font-size: 5vw;
+        content: attr(data-mobile);
+        position: relative;
+        left: -0.5rem;
+    }
+    a:active {
+        color: black;
+        background-color: #eee; /*shouldn't be white or else contrast is way too high*/
+        mix-blend-mode: difference;
+    }
+}
+
+/*--------------------------RESPONSIVENESS: Background only --------------------------*/
+/*
+Important: enter responsive mode in dev view to check media queries, don't just resize the window or else it won't work
+    min-width x == width >= x
+    max-width x == width <= x
+*/
+@media (max-width: 1300px)  {
+    body {
+        background-position: right -25vw bottom 50%;
+    }
+}
+
+@media (max-width: 980px) {
+    body {
+        background-position: right -30vw bottom 50%;
+    }
+}
+
+@media (max-width: 852px) { 
+    body {
+        background-position: right -59vw bottom 50%;
+    }
+}
+
+@media (max-width: 752px) and (hover: none) {
+    .light {
+        color: #aaa;
+    }
+    body {
+        background-position: right 50% bottom 78%;
+    }
+}

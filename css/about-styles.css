@@ -5,13 +5,31 @@
 }
 
 .header .header-container h1 {
-	font-family: "bigillaregular";
+	font-family: 'stretchPro';
 	font-size: 12rem;
 }
 
-@media (max-width: 900px) {
+@media (min-width: 900px) and (max-width: 1500px) {
+	.header .header-container h1 {
+		font-size: 7.8rem;
+		position: relative;
+		left: 2%;
+		top: -4rem;
+	}
+}
+
+@media (min-width: 520px) and (max-width: 900px) {
 	.header .header-container h1 {
 		font-size: 4.5rem;
+		position: relative;
+		left: 2%;
+		top: -4rem;
+	}
+}
+
+@media (max-width: 520px) {
+	.header .header-container h1 {
+		font-size: 3rem;
 		position: relative;
 		left: 2%;
 		top: -4rem;
@@ -48,22 +66,31 @@
 	}
 }
 
+@media (max-width: 520px) {
+	.hero-image {
+		margin-top: -250px;
+	}
+	.hero-image .hero-image-container {
+		width: 100%;
+	}
+}
+
 /*--------------------------FUNKY CONTENT--------------------------*/
 .funky-content {
 	padding-top: 2em;
 }
 
 .funky-content .funky-content-container p {
-	font-family: "bigillaregular";
-	font-size: 60px;
-	line-height: 100px;
+	font-family: 'akira';
+	font-size: 40px;
+	font-weight: 200;
+	line-height: 50px;
 }
 
 @media (max-width: 900px) {
 	.funky-content .funky-content-container p {
-		font-size: 36px;
-		line-height: 50px;
-		text-align: justify;
+		font-size: 20px;
+		line-height: 25px;
 	}
 }
 
@@ -75,18 +102,19 @@
 
 .contact .contact-container a {
 	text-decoration: none;
-	font-family: "bigillaregular";
-	font-size: 64px;
+	font-family: 'akira';
+	font-size: 36px;
 }
 
 @media (max-width: 400px) {
 	.contact .contact-container {
 		flex-direction: column;
+		line-height: 30px;
 	}
 }
 
 @media (max-width: 900px) {
 	.contact .contact-container a {
-		font-size: 43px;
+		font-size: 20px;
 	}
 }

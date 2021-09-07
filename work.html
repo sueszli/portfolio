@@ -10,8 +10,10 @@
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/thinline.css">
+
     <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="/css/work-styles.css">
 </head>
 
 <style>
@@ -21,22 +23,84 @@
 <body>
     <div class="wrapper">
         <div class="container">
-            
-            <!-- navbar -->
-            <nav class="navbar mono">
+            <!--==================== NAVBAR ====================-->
+            <nav class="navbar">
                 <div class="navbar-container">
-                    <div class="back-nav"><a href="index.html">< back</a></div>
-                    <div class="forward-nav"><a href="about.html">who i am ></a></div>
+                    <div class="back-nav nav-elem"><a href="index.html">< back home</a></div>
+                    <div class="forward-nav nav-elem"><a href="about.html">who i am ></a></div>
                 </div>
             </nav>
-            
             <div class="divider"></div>
             
-            <div class="whitespace"></div>                
-            <h1 class="mono" style="font-size: 80px;">Work in progress</h1>
-            <div class="whitespace"></div>                
+            <!--==================== HOME ====================-->
+            <section>
+                <div class="home">
+                        
+                    <div class="socials">
+                        <a href="https://github.com/sueszli" target="_blank" class="socials-icon">
+                            <i class="uil uil-github-alt socials-button"></i>
+                        </a>
+                        <a href="mailto:jabaryyahya@gmail.com" target="_blank" class="socials-icon">
+                            <i class="uil uil-envelope-alt socials-button"></i>
+                        </a>
+                        <a href="https://wa.me/message/LA6O7IT7UHFRG1" target="_blank" class="socials-icon">
+                            <i class="uil uil-whatsapp socials-button"></i>
+                        </a>
+                    </div>
+                    
+                    <img src="/images/back.jpg" alt="me coding">
+
+                    <div class="home-data">
+                        <div class="home__title">REESUMÉ</div>
+                        
+                        <p class="home__description content">
+                            Thank you for visiting! <br>
+                            Here's my CV and a short summary of it down below.
+                        </p>
+                        
+                        <div class="download-button-container">
+                            <a target="_blank" href="/pdf/random.pdf" class="button button--flex download-button">
+                                download here                      
+                                <i class="uit uit-download-alt download-icon"></i>              
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
             
+            <div class="whitespace-home"></div>
+            
+
+            <!--==================== FOOTER ====================-->
+            <footer>
+                <p>Pictures by <a target="_blank" href="https://www.jakobsohm.at/">@jakobsohm</a> <br>
+                    Copyright <a target="_blank" href="https://github.com/sueszli/portfolio">@sueszli</a>, 2021 <br></p>
+            </footer>
+            <div class="whitespace"></div>                
         </div>
     </div>
 </body>
+
+<script>
+    /*==================== ACCORDION SKILLS ====================*/
+    const skillsContent = document.getElementsByClassName('skills__content');
+    const skillsHeader = document.querySelectorAll('.skills__header');
+
+    function toggleSkills() {
+        let itemClass = this.parentNode.className;
+        for (let i = 0; i < skillsContent.length; i++) {
+            skillsContent[i].className = 'skills__content skills__close';
+        }
+
+        if(itemClass === 'skills__content skills__close'){
+            this.parentNode.className = 'skills__content skills__open';
+        }
+    }
+
+    skillsHeader.forEach(el => {
+        el.addEventListener('click', toggleSkills);
+    })
+</script>
+
 </html>
