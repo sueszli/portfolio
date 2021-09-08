@@ -145,10 +145,16 @@ img {
         font-size: 20px;
     }    
 
-    .download-button {
-        margin-right: 1rem;
-        transform: translateY(2rem);
+    .download-button-container {
+        display: flex;
+        justify-content: center;
+        transform: translateX(-2.43rem);
+        padding-left: 2rem;
     }    
+
+    .download-button {
+        transform: translateY(2rem);
+    }  
 }    
 
 @media (min-width: 460px) and (max-width: 650px) {  /*[460;650]*/
@@ -266,20 +272,23 @@ img {
     display: flex;
     align-items: center;
     cursor: pointer;
-
-    margin: 0;
-    margin-bottom: 2rem;
+    
+    transform: translateY(-0.5rem);
+    margin-left: 1.5rem;
 }
 .skills__title {
     font-size: var(--normal-font-size);
+    margin-left: 3rem;
 }
+
 .skills__subtitle {
     font-size: var(--small-font-size);
+    opacity: 80%;
+    margin-left: 3rem;
 }
 
 .skills__icon {
     font-size: 4rem;
-    margin-right: 0.75rem;
 }
 .skills__arrow {
     font-size: 6rem;
@@ -290,50 +299,57 @@ img {
     color: var(--first-color);
 }
 
-
-.skills__titles {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
+.skills__list {
+    max-width: 780px;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    margin: auto;
 }
 
-.skills__name {
+.skills__data {
+    margin-bottom: 2.5rem;
+}
+
+.skills__titles {
+    font-family: 'JetBrains Mono', monospace;
     font-size: var(--normal-font-size);
-    font-weight: 200;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
 }
 
 .skills__bar, .skills__percentage {
-    height: 5px;
+    height: 9px;
     border-radius: 0.25rem;
 }
 
 .skills__bar {
-    background-color: hsl(210, 92%, 85%);
+    background-color: hsl(210, 100%, 99%);
 }
 
 .skills__percentage {
     display: block;
-    background-color: var(--first-color);
+    background-color: var(--hover-color);
 }
 
 .skills__content {
     padding: 1rem 0.5rem;
     margin-bottom: 1rem;
     border: solid;
-    border-color: var(--first-color);
+    border-color: var(--hover-color);
     border-width: 1px;
     border-radius: 0.5rem;
 }
 
 /*https://stackoverflow.com/questions/68964085/is-it-possible-to-use-data-attributes-in-html-to-set-the-width-in-css*/
-.skills__html { width: 90%; }
-.skills__css { width: 80%; }
-.skills__js { width: 90%; }
-.skills__react { width: 50%; }
-.skills__php { width: 70%; }
-.skills__node { width: 80%; }
-.skills__firebase { width: 90%; }
-.skills__python { width: 55%; }
+.skills__html { width: 95%; }
+.skills__css { width: 50%; }
+.skills__js { width: 30%; }
+.skills__angular { width: 10%; }
+
+.skills__java { width: 75%; }
+.skills__javaSpring { width: 10%; }
+.skills__haskell { width: 25%; }
 
 .skills__close .skills__list { 
     height: 0;
@@ -345,16 +361,82 @@ img {
     margin-bottom: 2.5rem;
 }
 
+.skills__open > .skills__header {
+    margin-bottom: 2.3rem;
+}
+
 .skills__open .skills__arrow {
     transform: rotate(-180deg);
 }
 
-/* For small devices */
-@media screen and (max-width: 350px) {
+@media (max-width: 420px) {
+    .skills__header {
+        transform: translateY(0);
+        margin-left: 0.5rem;
+    }
     .skills__title {
-        font-size: var(--normal-font-size);
+        font-size: 20px;
+        margin-left: 1rem;
+    }    
+    .skills__subtitle {
+        display: none;
+        margin-left: 1rem;
+    }
+    .skills__icon {
+        font-size: 2rem;
+    }
+    .skills__arrow {
+        font-size: 3rem;
+    }
+
+    .skills__titles {
+        font-size: 20px;
     }
 }
+
+@media (min-width: 420px) and (max-width: 500px) {
+    .skills__header {        
+        transform: translateY(0);
+        margin-left: 0.5rem;
+    }
+    .skills__title {
+        font-size: 24px;
+        margin-left: 1rem;
+    }    
+    .skills__subtitle {
+        margin-left: 1rem;
+    }
+    .skills__icon {
+        font-size: 2rem;
+    }
+    .skills__arrow {
+        font-size: 3rem;
+    }
+
+    .skills__titles {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 1320px) {
+    .skills__header {
+        transform: translateY(0);
+    }
+    .skills__title {
+        font-size: 24px;
+    }    
+    .skills__icon {
+        font-size: 3rem;
+    }
+    .skills__arrow {
+        font-size: 4rem;
+    }
+
+    .skills__titles {
+        font-size: 24px;
+    }
+}    
+
 
 
 
