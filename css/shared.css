@@ -81,6 +81,25 @@ a {
 	text-decoration: none;
 }
 
+.animated-link {
+	text-decoration: none;
+	display: inline-block;
+}
+
+.animated-link::after {
+	content: '';
+	display: block;
+	width: 0;
+	height: 2px;
+	background: white;
+	transition: width 0.3s;
+}
+
+.animated-link:hover::after {
+	width: 100%;
+	transition: width 0.3s;
+}
+
 /*--------------------------NAVBAR--------------------------*/
 nav {
 	font-size: 16px;

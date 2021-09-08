@@ -21,7 +21,6 @@
 
     color: var(--first-color);
     border: solid 1px;
-    border-radius: 0.5rem;
 }    
 
 .button:hover {
@@ -284,7 +283,7 @@ img {
 
 .skills__subtitle {
     font-size: var(--medium-font-size);
-    opacity: 80%;
+    opacity: 50%;
     margin-left: 3rem;
 }
 
@@ -339,7 +338,6 @@ img {
     border: solid;
     border-color: var(--hover-color);
     border-width: 1px;
-    border-radius: 0.5rem;
 }
 
 /*https://stackoverflow.com/questions/68964085/is-it-possible-to-use-data-attributes-in-html-to-set-the-width-in-css*/
