@@ -93,6 +93,16 @@ nav {
 	animation-fill-mode: forwards; /*stays the same after animation*/
 }
 
+@media (max-width: 600px) {
+	.center-nav > a {
+        font-size: 0;
+    }
+    .center-nav > a::after {
+        font-size: var(--small-font-size);
+        content: attr(data-mobile);
+    }
+}
+
 .nav-elem:hover {
 	font-weight: 600;
 }
@@ -105,6 +115,10 @@ nav {
 	animation-name: right;
 }
 
+.center-nav:hover {
+	animation-name: center;
+}
+
 @keyframes left {
 	0% {left: 0rem;}
 	100% { left: -1rem; }
@@ -113,6 +127,11 @@ nav {
 @keyframes right {
 	0% {left: 0rem;}
 	100% { left: 1rem; }
+}
+
+@keyframes center {
+	0% {top: 0rem;}
+	100% { top: -0.1rem; }
 }
 
 .navbar .navbar-container {
@@ -166,9 +185,9 @@ nav {
 
 /*--------------------------FOOTER--------------------------*/
 footer {
-	font-size: 20px;
+	font-size: 16px;
 	font-weight: 100;
-	opacity: 70%;
+	opacity: 50%;
 	margin-top: 4rem;
 	margin-bottom: 1rem;
 	text-align: center;
