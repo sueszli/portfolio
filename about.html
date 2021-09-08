@@ -20,8 +20,8 @@
             <!-- navbar -->
             <nav class="navbar">
                 <div class="navbar-container">
-                    <div class="back-nav nav-elem"><a href="index.html">< back home</a></div>
-                    <div class="forward-nav nav-elem"><a href="work.html">what i do ></a></div>
+                    <div class="back-nav nav-elem"><a href="https://www.yahya.codes/">< back home</a></div>
+                    <div class="forward-nav nav-elem"><a href="https://www.yahya.codes/work">what i do ></a></div>
                 </div>
             </nav>
 
@@ -152,5 +152,22 @@
             navigator.clipboard.writeText("jabaryyahya@gmail.com");
         }
     }
+
+    /*==================== SMOOTH SCROLL ====================*/
+    const body = document.body;
+    const scrollWrap = document.getElementsByClassName("wrapper")[0];
+    const height = scrollWrap.getBoundingClientRect().height - 1;
+    const speed = 0.04;
+    let offset = 0;
+    body.style.height = Math.floor(height) + "px";
+
+    function smoothScroll() {
+        offset += (window.pageYOffset - offset) * speed;
+        let scroll = "translateY(-" + offset + "px) translateZ(0)";
+        scrollWrap.style.transform = scroll;
+        callScroll = requestAnimationFrame(smoothScroll);
+    }
+
+    smoothScroll();
 </script>
 </html>

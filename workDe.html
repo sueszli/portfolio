@@ -26,9 +26,9 @@
             <!--==================== NAVBAR ====================-->
             <nav class="navbar">
                 <div class="navbar-container">
-                    <div class="back-nav nav-elem"><a href="index.html">< back home</a></div>
-                    <div class="center-nav nav-elem"><a data-mobile="englisch" href=".//work.html">< englische version ></Auf></a></div>
-                    <div class="forward-nav nav-elem"><a href="about.html">who i am ></a></div>
+                    <div class="back-nav nav-elem"><a href="https://www.yahya.codes/">< back home</a></div>
+                    <div class="center-nav nav-elem"><a data-mobile="englisch" href="https://www.yahya.codes/work">< englische version ></Auf></a></div>
+                    <div class="forward-nav nav-elem"><a href="https://www.yahya.codes/about">who i am ></a></div>
                 </div>
             </nav>
             <div class="divider"></div>
@@ -101,6 +101,24 @@
     skillsHeader.forEach(el => {
         el.addEventListener('click', toggleSkills);
     })
+    
+    
+    /*==================== SMOOTH SCROLL ====================*/
+    const body = document.body;
+    const scrollWrap = document.getElementsByClassName("wrapper")[0];
+    const height = scrollWrap.getBoundingClientRect().height - 1;
+    const speed = 0.04;
+    let offset = 0;
+    body.style.height = Math.floor(height) + "px";
+
+    function smoothScroll() {
+        offset += (window.pageYOffset - offset) * speed;
+        let scroll = "translateY(-" + offset + "px) translateZ(0)";
+        scrollWrap.style.transform = scroll;
+        callScroll = requestAnimationFrame(smoothScroll);
+    }
+
+    smoothScroll();
 </script>
 
 </html>
