@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,8 +17,10 @@
 </head>
 
 <body>
-    <header> <!-- Only shown if no mouse-->
-        <h1><span class="light">yahya.</span><span class="txt-type0" data-words='["codes", "makes stuff", "breaks stuff"]'></span></h1>
+    <header>
+        <!-- Only shown if no mouse-->
+        <h1><span class="light">yahya.</span><span class="txt-type0"
+                data-words='["codes", "makes stuff", "breaks stuff"]'></span></h1>
     </header>
 
     <nav>
@@ -26,7 +29,8 @@
         </a>
 
         <a href="https://www.yahya.codes/work" data-hover="&nbsp;What I do" data-mobile="Resumé">
-            <span class="light">Yahya </span><span class="txt-type1" data-words='["codes.", "makes stuff.", "breaks stuff."]'></span>
+            <span class="light">Yahya </span><span class="txt-type1"
+                data-words='["codes.", "makes stuff.", "breaks stuff."]'></span>
         </a>
     </nav>
 </body>
@@ -38,13 +42,13 @@
     const pauseAfterWriting = 2500;
     const PauseAfterDeleting = 500;
     const initialTypeSpeed = 250; //lower number => faster
-    const deletingAccelerator = 2;  
+    const deletingAccelerator = 2;
 
 
     class TypeWriter {
         constructor(spanElement, words) { //default set to 3000ms
             this.spanElement = spanElement;
-            this.words = words; 
+            this.words = words;
             this.txt = ''; //written words until now
             this.wordIndex = 0; //words are stored in an array
             this.type();
@@ -56,7 +60,7 @@
             const current = this.wordIndex % this.words.length;
             const fulltxt = this.words[current];
 
-            if(this.isDeleting) {
+            if (this.isDeleting) {
                 this.txt = fulltxt.substring(0, this.txt.length - 1); //remove char
             } else {
                 this.txt = fulltxt.substring(0, this.txt.length + 1); //add char
@@ -66,12 +70,12 @@
             this.spanElement.innerHTML = `<span class="txt">${this.txt}</span>`;
 
             let typeSpeed = initialTypeSpeed;
-            if(this.isDeleting) { typeSpeed = typeSpeed / deletingAccelerator; }
+            if (this.isDeleting) { typeSpeed = typeSpeed / deletingAccelerator; }
 
-            if(!this.isDeleting && this.txt === fulltxt) { //finished typing
+            if (!this.isDeleting && this.txt === fulltxt) { //finished typing
                 this.isDeleting = true;
                 typeSpeed = pauseAfterWriting;
-            } else if(this.isDeleting && this.txt === '') { //finished deleting
+            } else if (this.isDeleting && this.txt === '') { //finished deleting
                 this.isDeleting = false;
                 this.wordIndex++;
                 typeSpeed = PauseAfterDeleting;//pause
@@ -80,10 +84,10 @@
             setTimeout(() => this.type(), typeSpeed); //calls itself each 500ms
         }
     }
-    
+
     // Init on DOM load
     document.addEventListener('DOMContentLoaded', init);
-    
+
     function init() {
         //touchpad typewriter
         const spanElement0 = document.querySelector('.txt-type0');
@@ -96,4 +100,5 @@
         new TypeWriter(spanElement1, words1);
     }
 </script>
+
 </html>

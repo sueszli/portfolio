@@ -5,7 +5,7 @@
 }
 
 .header .header-container h1 {
-	font-family: 'stretchPro';
+	font-family: "stretchPro";
 	font-size: 12rem;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .funky-content .funky-content-container p {
-	font-family: 'akira';
+	font-family: "akira";
 	font-size: 40px;
 	font-weight: 200;
 	line-height: 50px;
@@ -102,7 +102,7 @@
 
 .contact .contact-container a {
 	text-decoration: none;
-	font-family: 'akira';
+	font-family: "akira";
 	font-size: 36px;
 }
 
