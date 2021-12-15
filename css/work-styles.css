@@ -351,30 +351,6 @@ img {
     border-width: 1px;
 }
 
-/*https://stackoverflow.com/questions/68964085/is-it-possible-to-use-data-attributes-in-html-to-set-the-width-in-css*/
-.skills__html {
-    width: 95%;
-}
-.skills__css {
-    width: 50%;
-}
-.skills__js {
-    width: 30%;
-}
-.skills__angular {
-    width: 35%;
-}
-
-.skills__java {
-    width: 75%;
-}
-.skills__javaSpring {
-    width: 10%;
-}
-.skills__haskell {
-    width: 25%;
-}
-
 .skills__close .skills__list {
     height: 0;
     overflow: hidden;
