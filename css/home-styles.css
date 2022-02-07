@@ -170,7 +170,7 @@ Important: enter responsive mode in dev view to check media queries, don't just 
     min-width x == width >= x
     max-width x == width <= x
 */
-@media (max-width: 1300px) {
+@media (max-width: 2280px) {
     body {
         background-position: right -25vw bottom 50%;
     }

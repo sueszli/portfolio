@@ -59,7 +59,7 @@
 
 @media (max-width: 900px) {
 	.hero-image {
-		margin-top: -290px;
+		margin-top: -250px;
 	}
 	.hero-image .hero-image-container {
 		width: 100%;
@@ -68,7 +68,7 @@
 
 @media (max-width: 520px) {
 	.hero-image {
-		margin-top: -245px;
+		margin-top: -200px;
 	}
 	.hero-image .hero-image-container {
 		width: 100%;
