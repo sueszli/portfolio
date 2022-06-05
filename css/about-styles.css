@@ -82,9 +82,9 @@
 
 .funky-content .funky-content-container p {
 	font-family: "akira";
-	font-size: 40px;
+	font-size: 30px;
 	font-weight: 200;
-	line-height: 50px;
+	line-height: 30px;
 }
 
 @media (max-width: 900px) {
@@ -103,7 +103,7 @@
 .contact .contact-container a {
 	text-decoration: none;
 	font-family: "akira";
-	font-size: 36px;
+	font-size: 30px;
 }
 
 @media (max-width: 400px) {
@@ -117,4 +117,12 @@
 	.contact .contact-container a {
 		font-size: 20px;
 	}
+}
+
+/*--------------------------FOOTER--------------------------*/
+footer {
+	font-size: 15px;
+	opacity: 15%;
+	margin-top: 10rem;
+	text-align: center;
 }
